@@ -8,3 +8,9 @@ def consultarRa(vRa):
         raResultado = resultadoConsulta[idAluno]['RA']
         if vRa == raResultado:
             return resultadoConsulta[idAluno]
+
+
+def consultarTodos():
+    consultar = requests.get(f'{link}/Alunos/.json')
+    resultadoConsulta = consultar.json()
+    return resultadoConsulta
