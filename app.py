@@ -6,7 +6,8 @@ from Scripts import ConsultarRA
 app = Flask(__name__)
 
 @app.route('/')
-def ConsultarRa():
+@app.route('/home')
+def home():
     return 'Olá mundo'
 
 #app.run()
