@@ -23,7 +23,7 @@ def consultarTodos():
 
 @app.route("/Cadastrar", methods=['POST'])
 def cadastro():
-    data = request.json
+    data = request.form.to_dict(flat=False)
     return jsonify(data)
 
 
