@@ -24,7 +24,7 @@ def consultarTodos():
 @app.route("/Cadastrar", methods=['GET', 'POST'])
 def cadastro():
     ra = request.args.get("RA")
-    return ra
+    return Consultas.consultarTodos()
 
 
 
