@@ -1,18 +1,14 @@
 import requests
 from flask import Flask
-import json
-from Scripts import ConsultarRA
+
 
 app = Flask(__name__)
 
-@app.route('/')
-@app.route('/home')
-def home():
-    return 'Olá mundo'
 
-app.run()
+@app.route("/")
+def index():
+    return "<h1>Hello World</hi>"
 
-# if __name__ == '__main__':
-#     app.secret_key = 'ItIsASecret'
-#     app.debug = True
-#     app.run()
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)
