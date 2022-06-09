@@ -2,7 +2,8 @@ from crypt import methods
 import requests
 import os
 from flask import Flask
-from Scripts import Consultas
+from flask import request
+from Scripts import Consultas, cadastrar
 
 
 app = Flask(__name__)
@@ -19,6 +20,10 @@ def consultarRa(ra):
 @app.route("/All", methods=['GET'])
 def consultarTodos():
     return Consultas.consultarTodos()
+
+@app.route("/Cadastrar", methods=['POST'])
+def cadastro():
+    return cadastrar(request.data)
 
 
 
