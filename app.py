@@ -1,3 +1,4 @@
+from crypt import methods
 import requests
 import os
 from flask import Flask
@@ -7,9 +8,8 @@ from Scripts import ConsultarRA
 app = Flask(__name__)
 
 
-@app.route("/")
-def index():
-    ra = "112"
+@app.route("/<ra>", methods=['GET'])
+def index(ra):
     if ConsultarRA.consultarRa(ra) == True:
         return "Encontrou"
     else:
