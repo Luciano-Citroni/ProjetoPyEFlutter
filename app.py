@@ -2,19 +2,25 @@ from crypt import methods
 import requests
 import os
 from flask import Flask
-from Scripts import ConsultarRA
+from Scripts import Consultas
 
 
 app = Flask(__name__)
 
 
 @app.route("/<ra>", methods=['GET'])
-def index(ra):
-    return ConsultarRA.consultarRa(ra)
+def consultarRa(ra):
+    return Consultas.consultarRa(ra)
     # if ConsultarRA.consultarRa(ra) == True:
     #     return "Encontrou"
     # else:
     #     return "Nada foi encontrado"
+
+@app.route("/All", methods=['GET'])
+def consultarTodos():
+    return Consultas.consultarTodos()
+
+
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
