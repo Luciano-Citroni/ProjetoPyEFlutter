@@ -7,4 +7,4 @@ def consultarRa(vRa):
     for idAluno in resultadoConsulta:
         raResultado = resultadoConsulta[idAluno]['RA']
         if vRa == raResultado:
-            return resultadoConsulta
+            return resultadoConsulta[idAluno]
