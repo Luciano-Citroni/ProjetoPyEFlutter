@@ -2,7 +2,7 @@ from crypt import methods
 import requests
 import os
 from flask import Flask
-from flask import request
+from flask import request, jsonify
 from Scripts import Consultas, cadastrar
 
 
@@ -21,10 +21,10 @@ def consultarRa(ra):
 def consultarTodos():
     return Consultas.consultarTodos()
 
-@app.route("/Cadastrar", methods=['GET', 'POST'])
+@app.route("/Cadastrar", methods=['POST'])
 def cadastro():
-    ra = request.args.get("RA")
-    return Consultas.consultarTodos()
+    data = request.json
+    return jsonify(data)
 
 
 
