@@ -21,10 +21,10 @@ def consultarRa(ra):
 def consultarTodos():
     return Consultas.consultarTodos()
 
-@app.route("/Cadastrar", methods=['POST'])
+@app.route("/Cadastrar", methods=['GET', 'POST'])
 def cadastro():
     ra = request.args.get("RA")
-    return cadastrar(ra)
+    return ra
 
 
 
