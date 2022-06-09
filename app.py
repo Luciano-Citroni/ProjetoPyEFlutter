@@ -9,7 +9,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    ra = 112
+    ra = "112"
     if ConsultarRA.consultarRa(ra) == True:
         return "Encontrou"
     else:
