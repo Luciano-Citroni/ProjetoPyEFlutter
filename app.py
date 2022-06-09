@@ -9,7 +9,7 @@ app = Flask(__name__)
 def ConsultarRa():
     return 'Olá mundo'
 
-app.run()
+#app.run()
 
 if __name__ == '__main__':
     app.secret_key = 'ItIsASecret'
