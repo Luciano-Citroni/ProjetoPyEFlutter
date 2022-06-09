@@ -23,7 +23,8 @@ def consultarTodos():
 
 @app.route("/Cadastrar", methods=['POST'])
 def cadastro():
-    return cadastrar(request.data)
+    ra = request.args.get("RA")
+    return cadastrar(ra)
 
 
 
